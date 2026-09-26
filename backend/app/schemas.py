@@ -244,3 +244,34 @@ class SettleEntry(BaseModel):
     field_5: str | None = None  # 已收金额
     field_6: str | None = None  # 开票状态
     field_7: str | None = None  # 结算状态
+
+
+class ArchiveMaterialPayload(BaseModel):
+    """一份随附材料：文件名加 base64 编码的文件内容。"""
+
+    name: str = ""
+    content_base64: str = ""
+
+
+class ArchiveSubmitItem(BaseModel):
+    """一份单证的归档提交：单证编号加若干随附材料。"""
+
+    doc_no: str = ""
+    materials: list[ArchiveMaterialPayload] = Field(default_factory=list)
+    remark: str | None = None
+
+
+class ArchiveBatchPayload(BaseModel):
+    """一次交多份单证材料：逐份校验、逐份回执。"""
+
+    items: list[ArchiveSubmitItem] = Field(default_factory=list)
+
+
+class ArchiveReceipt(BaseModel):
+    """单份单证的归档回执：成了给版本号，挡下时列明缺什么。"""
+
+    doc_no: str
+    ok: bool
+    version: int | None = None
+    message: str
+    missing: list[str] = Field(default_factory=list)
