@@ -244,3 +244,39 @@ class SettleEntry(BaseModel):
     field_5: str | None = None  # 已收金额
     field_6: str | None = None  # 开票状态
     field_7: str | None = None  # 结算状态
+
+class DocarchiveEntry(BaseModel):
+    """单证材料归档明细结构。"""
+
+    field_0: str | None = None  # 单证编号
+    field_1: str | None = None  # 关联航次
+    field_2: str | None = None  # 当前版本
+    field_3: str | None = None  # 材料份数
+    field_4: str | None = None  # 提交人
+    field_5: str | None = None  # 归档时间
+    field_6: str | None = None  # 审核人员
+    field_7: str | None = None  # 归档状态
+
+
+class MaterialPayload(BaseModel):
+    """一份随附材料：名称、类型与正文内容。"""
+
+    名称: str = ""
+    类型: str = ""
+    内容: str = ""
+
+
+class ArchiveSubmitItem(BaseModel):
+    """批量提交里的一份单证材料。"""
+
+    单证编号: str = ""
+    关联航次: str | None = None
+    说明: str | None = None
+    材料: list[MaterialPayload] = Field(default_factory=list)
+
+
+class ArchiveBatchPayload(BaseModel):
+    """一次交多份单证材料时的整批提交体：要么全入库，要么一份不留。"""
+
+    提交人: str = ""
+    items: list[ArchiveSubmitItem] = Field(default_factory=list)

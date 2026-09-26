@@ -33,3 +33,26 @@ body { margin: 0; background: #f6f8fb; color: #1f2937; }
 .link { border: none; background: none; color: var(--brand); cursor: pointer; padding: 0; }
 .page-foot { display: flex; justify-content: space-between; margin-top: 8px; font-size: 12px; color: var(--muted); }
 .error-text { color: #b42318; }
+
+/* 单证材料归档页：提交面板、回执与版本卡片 */
+.input { padding: 5px 8px; border: 1px solid var(--border); border-radius: 6px; font-size: 13px; }
+.panel { background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 12px; margin: 12px 0; }
+.panel-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 10px; }
+.panel-title { margin: 0; font-size: 14px; }
+.panel-actions { display: flex; gap: 10px; margin-top: 4px; }
+.panel-message { margin: 10px 0 0; font-size: 13px; }
+.submit-item { border: 1px dashed var(--border); border-radius: 6px; padding: 10px; margin-bottom: 10px; }
+.form-grid { display: flex; flex-wrap: wrap; gap: 10px; align-items: flex-end; margin-bottom: 8px; }
+.form-item span { display: block; font-size: 12px; color: var(--muted); }
+.form-item.grow { flex: 1; }
+.material-row { display: flex; gap: 8px; margin-bottom: 6px; }
+.material-row .mat-content { flex: 1; }
+.package-bar { display: flex; gap: 6px; }
+.receipt-ok { color: #067647; }
+.receipt-blocked { color: #b42318; }
+.version-card { border: 1px solid var(--border); border-radius: 6px; padding: 10px; margin-bottom: 8px; }
+.version-head { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 6px; }
+.version-time, .version-note { color: var(--muted); font-size: 12px; margin-left: 8px; }
+.version-readonly { color: var(--muted); font-size: 12px; }
+.tag { font-size: 12px; padding: 1px 8px; border-radius: 10px; background: #eef2ff; color: var(--brand); margin-left: 6px; }
+.tag.readonly { background: #f2f4f7; color: var(--muted); }

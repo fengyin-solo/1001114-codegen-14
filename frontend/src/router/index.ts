@@ -14,6 +14,7 @@ const Truck = () => import('@/views/truck/index.vue')
 const Tally = () => import('@/views/tally/index.vue')
 const Damage = () => import('@/views/damage/index.vue')
 const Manifest = () => import('@/views/manifest/index.vue')
+const Docarchive = () => import('@/views/docarchive/index.vue')
 const Storage = () => import('@/views/storage/index.vue')
 const Pilot = () => import('@/views/pilot/index.vue')
 const Safety = () => import('@/views/safety/index.vue')
@@ -37,6 +38,7 @@ const router = createRouter({
     { path: '/tally', name: 'tally', component: Tally },
     { path: '/damage', name: 'damage', component: Damage },
     { path: '/manifest', name: 'manifest', component: Manifest },
+    { path: '/docarchive', name: 'docarchive', component: Docarchive },
     { path: '/storage', name: 'storage', component: Storage },
     { path: '/pilot', name: 'pilot', component: Pilot },
     { path: '/safety', name: 'safety', component: Safety },

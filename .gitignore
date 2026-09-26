@@ -85,3 +85,6 @@ desktop.ini
 *.db
 *.pid
 *.seed
+
+# 单证材料归档等模块的运行期落盘数据
+backend/data/
